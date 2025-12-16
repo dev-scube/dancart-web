@@ -1,4 +1,4 @@
-import { trpc } from "@/lib/trpc";
+import { useMockTrpc } from "@/lib/mockTrpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLocation } from "wouter";
@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 export default function DevLogin() {
   const [, setLocation] = useLocation();
+  const trpc = useMockTrpc();
   const { data: user } = trpc.auth.me.useQuery();
   const loginMutation = trpc.auth.devLogin.useMutation({
     onSuccess: () => {
@@ -19,7 +20,11 @@ export default function DevLogin() {
     }
   }, [user, setLocation]);
 
-  if (process.env.NODE_ENV !== "development") {
+  // Em modo estático, sempre permitir acesso
+  const isProduction = import.meta.env.PROD;
+  if (isProduction) {
+    // No GitHub Pages, sempre mostrar o login
+  } else if (process.env.NODE_ENV !== "development") {
     return (
       <div className="container flex items-center justify-center min-h-[60vh]">
         <Card className="w-full max-w-md">

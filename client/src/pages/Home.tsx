@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Heart, Users, Trophy } from "lucide-react";
 import { Link } from "wouter";
+import DepoimentosStatic from "@/components/DepoimentosStatic";
 import AgendamentoSection from "@/components/AgendamentoSection";
-import DepoimentosSection from "@/components/DepoimentosSection";
 
 export default function Home() {
   // The userAuth hooks provides authentication state
@@ -97,7 +97,7 @@ export default function Home() {
       <AgendamentoSection />
 
       {/* Depoimentos Section */}
-      <DepoimentosSection />
+      <DepoimentosStatic />
 
       {/* Contact Section */}
       <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">

@@ -9,10 +9,10 @@ export const getLoginUrl = () => {
   const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
   const appId = import.meta.env.VITE_APP_ID;
   
-  // Se OAuth não estiver configurado, retorna null ou uma URL vazia
+  // Se OAuth não estiver configurado, retorna link para login de desenvolvimento
   if (!oauthPortalUrl || !appId) {
-    console.warn('[OAuth] OAuth não configurado. VITE_OAUTH_PORTAL_URL e VITE_APP_ID são necessários.');
-    return '#'; // Retorna um link vazio em vez de lançar erro
+    console.warn('[OAuth] OAuth não configurado. Usando login de desenvolvimento.');
+    return '/dev-login'; // Link para página de login de desenvolvimento
   }
   
   const redirectUri = `${window.location.origin}/api/oauth/callback`;
