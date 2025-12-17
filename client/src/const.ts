@@ -1,6 +1,6 @@
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
-export const APP_TITLE = "DanCat Website";
+export const APP_TITLE = "Portal Dançart";
 
 export const APP_LOGO = "/dancart-logo.png";
 

@@ -112,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-background">
+      <section id="contato" className="py-20 bg-background">
         <div className="container">
           <h2 className="text-4xl font-bold mb-12 text-center text-primary">Entre em Contato</h2>
           <div className="grid md:grid-cols-2 gap-12">

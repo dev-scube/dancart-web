@@ -21,15 +21,36 @@ import {
 } from "@/components/ui/sidebar";
 import { APP_LOGO, APP_TITLE, getLoginUrl } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { LayoutDashboard, LogOut, PanelLeft, Users } from "lucide-react";
+import { 
+  LayoutDashboard, 
+  LogOut, 
+  PanelLeft, 
+  Users, 
+  BookOpen, 
+  Calendar, 
+  MessageCircle, 
+  GraduationCap, 
+  CreditCard,
+  Image,
+  Ticket,
+  Newspaper
+} from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Page 1", path: "/" },
-  { icon: Users, label: "Page 2", path: "/some-path" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/admin/dashboard" },
+  { icon: Users, label: "Bailarinos", path: "/admin/bailarinos" },
+  { icon: BookOpen, label: "Cursos", path: "/admin/cursos" },
+  { icon: GraduationCap, label: "Matrículas", path: "/admin/matriculas" },
+  { icon: Calendar, label: "Agendamentos", path: "/admin/agendamentos" },
+  { icon: Calendar, label: "Eventos", path: "/admin/eventos" },
+  { icon: Newspaper, label: "Notícias", path: "/admin/noticias" },
+  { icon: Image, label: "Imagens", path: "/admin/imagens" },
+  { icon: Ticket, label: "Ingressos", path: "/admin/ingressos" },
+  { icon: MessageCircle, label: "Depoimentos", path: "/admin/depoimentos" },
 ];
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";

@@ -11,12 +11,27 @@ export default function Header() {
   const navItems = [
     { path: "/", label: "Início" },
     { path: "/galeria", label: "Galeria" },
+    { path: "/noticias", label: "Notícias" },
     { path: "/eventos", label: "Eventos" },
     { path: "/ingressos", label: "Ingressos" },
     { path: "/mensalidades", label: "Mensalidades" },
     { path: "/portal-aluno", label: "Portal do Aluno" },
-    { path: "/admin", label: "Admin" },
+    // { path: "/admin", label: "Admin" },
   ];
+
+  const handleContactClick = () => {
+    if (location === '/') {
+      // Se já estamos na home, faz scroll
+      const contactSection = document.getElementById('contato');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Se estamos em outra página, marca que não deve mostrar loading e redireciona
+      sessionStorage.setItem('dancart-skip-loading', 'true');
+      window.location.href = '/#contato';
+    }
+  };
 
   const isActive = (path: string) => location === path;
 
@@ -45,7 +60,11 @@ export default function Header() {
               </span>
             </Link>
           ))}
-          <Button size="sm" className="ml-2">
+          <Button 
+            size="sm" 
+            className="ml-2"
+            onClick={handleContactClick}
+          >
             Contato
           </Button>
         </div>
@@ -78,7 +97,14 @@ export default function Header() {
                 </span>
               </Link>
             ))}
-            <Button size="sm" className="w-full">
+            <Button 
+              size="sm" 
+              className="w-full"
+              onClick={() => {
+                setIsMenuOpen(false);
+                handleContactClick();
+              }}
+            >
               Contato
             </Button>
           </div>

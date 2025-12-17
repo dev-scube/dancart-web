@@ -13,7 +13,7 @@ import {
 
 // Estado global mockado (simula localStorage para persistência básica)
 let isAuthenticated = false;
-let currentUser = null;
+let currentUser: any = null;
 
 // Utilitário para formatar valores monetários
 const formatCurrency = (value: number) => {

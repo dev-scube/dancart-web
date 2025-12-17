@@ -77,16 +77,27 @@ export default function Eventos() {
     <div className="min-h-screen bg-background py-12">
       <div className="container">
         <div className="max-w-4xl mx-auto mb-12 text-center">
-          <h1 className="text-4xl font-bold mb-4">Eventos DançArt</h1>
+          <h1 className="text-4xl font-bold mb-4">Eventos para Bailarinos</h1>
           <p className="text-lg text-muted-foreground">
-            Participe de nossos festivais, competições e apresentações
+            Inscreva-se em nossos festivais, competições e apresentações de dança.
+            <br className="hidden sm:block" />
+            Aberto para competidores e bailarinos de todos os níveis.
           </p>
+          
+          <div className="mt-8 p-6 bg-primary/5 rounded-lg border max-w-2xl mx-auto">
+            <h2 className="text-xl font-semibold mb-3 text-primary">🏆 Para Competidores</h2>
+            <p className="text-sm text-muted-foreground">
+              Nossos eventos são especialmente organizados para bailarinos que desejam competir, 
+              apresentar suas habilidades e crescer artisticamente. Participe e mostre seu talento!
+            </p>
+          </div>
         </div>
 
         {!eventos || eventos.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-muted-foreground">
-              Nenhum evento disponível no momento. Fique atento às novidades!
+              Nenhum evento de dança disponível no momento para inscrições.
+              <br />Fique atento às novidades e oportunidades de competição!
             </p>
           </div>
         ) : (
@@ -179,12 +190,12 @@ export default function Eventos() {
           <DialogContent>
             <DialogHeader>
               <DialogTitle>
-                Inscrição: {selectedEvento?.titulo}
+                Inscrição de Bailarino: {selectedEvento?.titulo}
               </DialogTitle>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <Label htmlFor="nomeParticipante">Nome Completo *</Label>
+                <Label htmlFor="nomeParticipante">Nome Completo do Bailarino *</Label>
                 <Input
                   id="nomeParticipante"
                   value={formData.nomeParticipante}
