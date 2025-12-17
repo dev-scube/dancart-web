@@ -11,7 +11,7 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
-  base: process.env.NODE_ENV === 'production' ? '/dancat-website/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/dancart-web/' : '/',
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
